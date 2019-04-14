@@ -5,12 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tree Challenge</title>
+  <title>Tree Stuff</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
   <h1>Your boy out here planting emoji trees</h1>
-  <script src="main.js"></script>
+  <div class="form">
+    <h3>So you wanna make a tree??</h3>
+    <h3>Please select a number for your tree's height and a single character for the tree to be made of:</h3>
+    <input type="number" id="height" min="1" max="100">
+    <br>
+    <input type="text" placeholder="!" id="char">
+    <br>
+    <button id="treeButton">Lets make a treeeee!</button>
+  </div>
+  <div id="treeDiv"></div>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

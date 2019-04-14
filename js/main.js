@@ -51,7 +51,7 @@ const treeFunc = obj => {
   }
 }
 
-//well the above equation prints the tree upside down. so that's getting somewhere i guess.
+//well the above function prints the tree upside down. so that's getting somewhere i guess.
 
 
 
