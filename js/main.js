@@ -31,16 +31,32 @@ const specs2 = {
   char: '\uD83E\uDD37\u200D\u2642\uFE0F'
 }
 
+const grabData = () => {
+  specs.height = document.querySelector('#height').value;
+  specs.char = document.querySelector('#char').value;
+  treeFunc(specs);
+}
+
+const createTree = (text) => {
+  let para = document.createElement("P");
+  let paraData = document.createTextNode(text);
+  para.appendChild(paraData);
+  document.querySelector('#treeDiv').appendChild(para);
+}
+
+document.querySelector('#treeButton').addEventListener('click', grabData);
+
 const treeFunc = obj => {
   let counter = obj.height;
   let space = ' ';
-  line = '';
+  let line = document.createTextNode('');
   for (let i = 1; i <= counter; i++) {
     line = '';
     line += space;
     for (let j = 1; j <= (obj.height * 2) - 1; j++) {
       line += obj.char;
     }
+    createTree(line);
     console.log(line);
     obj.height--;
     space += ' ';
@@ -48,9 +64,6 @@ const treeFunc = obj => {
 }
 
 //well the above function prints the tree upside down. so that's getting somewhere i guess.
-
-
-
 
 //general idea below!
 
@@ -80,13 +93,6 @@ const treeFunc2 = obj => {
   }
 }
 
-
 treeFunc2(specs2);
 
-const grabData = () => {
-  specs.height = document.querySelector('#height').value;
-  specs.char = document.querySelector('#char').value;
-  treeFunc(specs);
-}
 
-document.querySelector('#treeButton').addEventListener('click', grabData);
