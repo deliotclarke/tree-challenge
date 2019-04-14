@@ -23,17 +23,13 @@
 //the formula is height = spaces in first line - then subtract one from height and add two characters
 
 const specs = {
-  height: 7,
-  char: '*'
+  char: ''
 }
 
 const specs2 = {
   height: 8,
   char: '\uD83E\uDD37\u200D\u2642\uFE0F'
 }
-
-// (height * 2) - 1
-
 
 const treeFunc = obj => {
   let counter = obj.height;
@@ -51,7 +47,7 @@ const treeFunc = obj => {
   }
 }
 
-//well the above equation prints the tree upside down. so that's getting somewhere i guess.
+//well the above function prints the tree upside down. so that's getting somewhere i guess.
 
 
 
@@ -85,5 +81,12 @@ const treeFunc2 = obj => {
 }
 
 
-treeFunc(specs);
 treeFunc2(specs2);
+
+const grabData = () => {
+  specs.height = document.querySelector('#height').value;
+  specs.char = document.querySelector('#char').value;
+  treeFunc(specs);
+}
+
+document.querySelector('#treeButton').addEventListener('click', grabData);
