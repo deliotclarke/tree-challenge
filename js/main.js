@@ -1,6 +1,5 @@
 //the challenge is to create a tree using a given character from user input
 
-
 const specs = {
   char: ''
 }
@@ -45,7 +44,6 @@ const treeFunc = obj => {
 
 //above code prints upside down tree.
 
-
 const treeFunc2 = obj => {
   let line = '';
   let space = ' ';
@@ -65,6 +63,11 @@ const treeFunc2 = obj => {
     charCount++;
     charCount++;
   }
+  for (let i = 0; i < 1; i++) {
+    line += obj.char;
+    //adds tree trunk *upside smiley*
+  }
+  createTree(line);
 }
 
 
