@@ -1,40 +1,20 @@
 //the challenge is to create a tree using a given character from user input
-//i'm going to try to make it work alone first 
 
-//       *
-//      ***
-//     *****
-//    *******
-//   *********
-//  ***********
-// *************
-
-// also can i add a trunk?
-
-//it needs an iterating for loop
-//for this tree it requires 7 spaces then the character
-//next line is 6 then two of the characters are added to it...
-//seems like a good formula to follow
-
-// so the loop would need to output 7 spaces then the character
-//then six spaces and two of the character
-// that means it time through the loop it needs to remove one space and add two characters?
-
-//the formula is height = spaces in first line - then subtract one from height and add two characters
 
 const specs = {
   char: ''
 }
 
 const specs2 = {
-  height: 8,
-  char: '\uD83E\uDD37\u200D\u2642\uFE0F'
+  char: ''
 }
 
+//\uD83E\uDD37\u200D\u2642\uFE0F <--- the code for man shrugging emoji
+
 const grabData = () => {
-  specs.height = document.querySelector('#height').value;
-  specs.char = document.querySelector('#char').value;
-  treeFunc(specs);
+  specs2.height = document.querySelector('#height').value;
+  specs2.char = document.querySelector('#char').value;
+  treeFunc2(specs2);
 }
 
 const createTree = (text) => {
@@ -63,13 +43,8 @@ const treeFunc = obj => {
   }
 }
 
-//well the above function prints the tree upside down. so that's getting somewhere i guess.
+//above code prints upside down tree.
 
-//general idea below!
-
-// line counter = height;
-// space count = height - 1;
-// character counter = 1; then add two each time
 
 const treeFunc2 = obj => {
   let line = '';
@@ -83,16 +58,14 @@ const treeFunc2 = obj => {
     for (let k = 1; k <= charCount; k++) {
       line += obj.char;
     }
-    console.log(line);
+    createTree(line);
+    console.log("works!");
     line = '';
     spaceCount--;
     charCount++;
-    // charCount++;
-    // second charCount++ is for regular keyboard characters
-    // one charCount is for emojis *upside smiley*
+    charCount++;
   }
 }
 
-treeFunc2(specs2);
 
 
